@@ -1,0 +1,9 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Sample",
+      "DestinationResultFolder": "@ACCOUNT/out",
+      "DestinationConclusionFolder": "@ACCOUNT/out",
+      "XmlSelendaFormat": [ "Guid" ],
+      "PdfFormat": [ "LastName", "MiddleName", "FirstName", "LabelId" ],
+      "ConclusionFormat": "MisIdHxid"
+  },

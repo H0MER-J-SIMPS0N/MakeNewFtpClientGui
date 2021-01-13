@@ -1,0 +1,8 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Sample",
+      "DestinationResultFolder": "@ACCOUNT/Out",
+      "DestinationConclusionFolder": "@ACCOUNT/Out",
+      "XmlSelendaFormat": [ "MisOrderId", "LabelId" ],
+      "ConclusionFormat": "FioMisId"
+  },

@@ -1,0 +1,6 @@
+  {
+    "ClientName": "@ACCOUNT",
+    "Contracts": [ "@CONTRACTS" ],
+    "ExportProcessingType": "Iteration",
+    "Receivers": [ "@EMAILSWITHERRORS" ]
+  },

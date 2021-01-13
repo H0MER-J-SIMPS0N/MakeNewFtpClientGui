@@ -1,0 +1,118 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MakeNewFtpClientGui.ViewModels;assembly=MakeNewFtpClientGui"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
+        x:Class="MakeNewFtpClientGui.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="MakeNewFtpClientGui"
+        MinWidth="1000" MinHeight="720" MaxHeight="720">
+  
+    <Grid>        
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="3*" />
+        <ColumnDefinition Width="7*" />
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="МИС" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" IsEnabled="{Binding IsEnabled}" />
+      <ComboBox Grid.Row="1" Grid.Column="0" Items="{Binding Mis}" SelectedItem="{Binding SelectedMis}" VerticalAlignment="Center" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" >
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" />
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+      <TextBlock Text="Хаб" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" />      
+      <ComboBox Grid.Row="3" Grid.Column="0" Items="{Binding Hubs}" SelectedItem="{Binding SelectedHub}" VerticalAlignment="Center" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" >
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding}" HorizontalAlignment="Left" />
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+      <TextBlock Text="Логин" Grid.Row="4" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" IsEnabled="{Binding IsEnabledLogin}" />
+      <TextBox Text="{Binding Login}" Watermark="Больше 2-ух символов" Grid.Row="5" Background="{Binding LoginBackgroundColor}" Grid.Column="0" Margin="1,1,1,1" IsEnabled="{Binding IsEnabledLogin}" />
+      <TextBlock Text="Пароль" Grid.Row="6" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" IsEnabled="{Binding IsEnabledPassword}" />
+      <TextBox Text="{Binding Password}" Watermark="Больше 8-ми символов" Grid.Column="0" Background="{Binding PasswordBackgroundColor}" Grid.Row="7" Margin="1,1,1,1" IsEnabled="{Binding IsEnabledPassword}" />
+      <CheckBox IsChecked="{Binding IsCreateAdAccount}" Grid.Row="8" Grid.Column="0" Content="Создавать учетку" IsEnabled="{Binding IsEnabled}" HorizontalAlignment="Left" />
+      <Button Content="Сгенерировать пароль" Command="{Binding GeneratePassword}" Grid.Row="8" Grid.Column="0" Margin="1,1,1,1" HorizontalAlignment="Right" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Коды мест забора" Grid.Row="9" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" />
+      <TextBox Text="{Binding AccountId}" Watermark="12345б 67890 (через запятую)" Grid.Row="10" Grid.Column="0" Margin="1,1,1,1" Background="{Binding AccountIdBackgroundColor}" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Коды контрактов" Grid.Row="11" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" />
+      <TextBox Text="{Binding Contract}" Watermark="C123456789, C987654321 (через запятую)" Background="{Binding ContractBackgroundColor}" Grid.Row="12" Grid.Column="0" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Сроки выполнения (Код региона сроков выполнения)" Grid.Row="13" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" />
+      <ComboBox Grid.Row="14" Grid.Column="0" Items="{Binding SpecialPropertyRegions}" SelectedItem="{Binding SelectedSpecialPropertyRegions}" Grid.RowSpan="2" VerticalAlignment="Center" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" >
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <TextBlock Grid.Row="0" Text="{Binding Item1}" HorizontalAlignment="Left" />
+              <TextBlock Grid.Row="1" Text="{Binding Item2}" HorizontalAlignment="Left" />
+            </Grid>
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+      <CheckBox IsChecked="{Binding IsByContract}" Grid.Row="16" Grid.Column="0" Content="По договору" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Почта для ошибок:" Grid.Row="17" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Bottom" />
+      <TextBox Text="{Binding Email}" Watermark="abc@cde.com, xxx@zzz.ru (через запятую)" Background="{Binding EmailBackgroundColor}" Grid.Row="18" Grid.Column="0" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Диапазон ШК:" Grid.Row="19" Grid.Column="0" VerticalAlignment="Bottom" />
+      <TextBox Text="{Binding LabelRange}" Watermark="6000000000 - 6123456789" Grid.Row="20" Grid.Column="0" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" />
+      <TextBlock Text="Выбор настроек:" Grid.Row="21" Grid.Column="0" VerticalAlignment="Bottom" />      
+      <CheckBox IsChecked="{Binding IsDictionariesAdd}" Grid.Row="22" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled}" >Справочники</CheckBox>
+      <CheckBox IsChecked="{Binding IsOrdersAdd}" Grid.Row="23" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled}" >Заказы</CheckBox>
+      <CheckBox IsChecked="{Binding IsResultsAdd}" Grid.Row="24" Grid.Column="0" Margin="1,1,1,1" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled}" >Результаты</CheckBox>
+      <TextBox Text="{Binding ScheduleStartTime}" Watermark="Время начала задания: 18-5-12" Grid.Row="25" Grid.Column="0" Margin="1,1,1,1" Background="{Binding ScheduleStartTimeBackgroundColor}" VerticalAlignment="Center" IsEnabled="{Binding IsEnabled}" />      
+      <Grid Grid.Column="1" Grid.RowSpan="26">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="12*" />
+          <RowDefinition Height="2*" />
+          <RowDefinition Height="10*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>        
+        <TextBox Text="{Binding Result}" Grid.Row="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="1,1,1,1" AcceptsReturn="True" IsEnabled="{Binding IsEnabled}" />
+        <Grid Grid.Row="1">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <TextBox Text="{Binding LetterMails}" Watermark="Список почты для отправки (через запятую)" Grid.Column="0" Background="{Binding LetterMailsBackgroundColor}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="1,1,1,1" IsEnabled="{Binding IsEnabled}" />
+          <TextBox Text="{Binding LetterSubject}" Watermark="Тема письма" Grid.Column="1" Background="{Binding LetterSubjectBackgroundColor}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="1,1,1,1" AcceptsReturn="True" IsEnabled="{Binding IsEnabled}" />
+          <Button Content="Отправить" Command="{Binding SendLetterCommand}" Grid.Column="2" Margin="1,1,1,1" HorizontalAlignment="Right" IsEnabled="{Binding IsEnabled}" />
+        </Grid>
+        <TextBox Text="{Binding Letter}" Grid.Row="2" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="1,1,1,1" IsReadOnly="True" AcceptsReturn="True" IsEnabled="{Binding IsEnabled}" />
+        <Button Content="Создать" Command="{Binding CreateCommand}" Grid.Row="3" Margin="1,1,1,1" HorizontalAlignment="Right" IsEnabled="{Binding IsEnabled}" />
+      </Grid>      
+    </Grid>
+</Window>

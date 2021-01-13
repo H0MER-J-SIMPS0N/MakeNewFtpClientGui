@@ -1,0 +1,9 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Order",
+      "DestinationResultFolder": "@ACCOUNT/out",
+      "DestinationConclusionFolder": "@ACCOUNT/out",
+      "XmlSelendaFormat": [ "MisOrderId", "LabelId" ],
+      "PdfFormat": [ "MisOrderId", "LabelId" ],
+      "ConclusionFormat": "MisIdHxid"
+  },

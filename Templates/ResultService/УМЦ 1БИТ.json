@@ -1,0 +1,9 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Sample",
+      "DestinationResultFolder": "@ACCOUNT/Out",
+      "DestinationConclusionFolder": "@ACCOUNT/Out",
+      "HtmlFormat": [ "MisOrderId", "LabelId" ],
+      "HtmlAdditions": [ "Header", "Signature" ],
+      "ConclusionFormat": "FioMisId"
+  },

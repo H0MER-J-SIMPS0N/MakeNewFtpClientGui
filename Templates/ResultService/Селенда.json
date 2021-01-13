@@ -1,0 +1,17 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Sample",
+      "DestinationResultFolder": "@ACCOUNT/out",
+      "DestinationConclusionFolder": "@ACCOUNT/ComplexEndings",
+      "XmlSelendaFormat": [ "Guid" ],
+      "ConclusionFormat": "MisIdHxid",
+      "PrivateResultMapping": [
+          {
+              "Analyzies": [ "МБ_ДИСБАКТЕРИОЗ_ПРОБИО_АБ_И_ФАГИ_LF" ],
+              "Value": "FormattedEntry",
+              "CountValue": "FormattedEntry",
+              "NormValue": [ "Attribute1", "Comment" ],
+              "Comment": "Attribute2"
+          }
+      ]
+  },

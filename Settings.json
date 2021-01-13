@@ -1,0 +1,12 @@
+{
+	"ConsoleStartsAccountLogin": "",
+	"ConsoleStartsAccountPassword": "",
+	"DictionariesFolderInScheduler": "",
+	"DictionariesServer": "",
+	"FtpPath": "",
+	"PathAD": "",
+	"PathToDictsConsole": "",
+	"FullPathToDictsSettings": "",
+	"FullPathToGftpRegistratorSettings": "",
+	"FullPathToResultServiceSettings": ""
+}

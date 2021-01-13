@@ -1,0 +1,19 @@
+  {
+      "Contracts": [ "@CONTRACTS" ],
+      "UploadingType": "Sample",
+      "DestinationResultFolder": "@ACCOUNT/out",
+      "DestinationConclusionFolder": "@ACCOUNT/out",
+      "XmlSelendaFormat": [ "Guid" ],
+      "XmlSelendaAdditions": [ "Method", "ReplicateCount" ],
+      "ConclusionFormat": "SampleIdHxidGuid",
+      "PrivateResultMapping": [
+          {
+              "Analyzies": [ "МБ_UREAPLASMA_SPP", "МБ_C_TRACHOMATIS_АБ", "МБ_C_TRACHOMATIS", "TOXIN_A_CLOSTRIDIUMDIF_ANTIGEN" ],
+              "Value": "FormattedEntry",
+              "CountValue": "FormattedEntry",
+              "NormValue": [ "Attribute1", "Comment" ],
+              "NormSpliterText": true,
+              "Comment": "Comment"
+          }
+      ]
+  },

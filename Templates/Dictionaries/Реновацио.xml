@@ -1,0 +1,21 @@
+    <!--@ACCOUNT-->
+    <singleAccountSettings name="@ACCOUNT">
+      <!--Выбора  типа выгрузки (Возможные варианты:FTP,FOLDER)-->
+      <DestinationType>FOLDER</DestinationType>
+      <!--ДанныеFTP-->
+      <ftp folder="ftp://ftp.ru/" login="@ACCOUNT" password="@PASSWORD" />
+      <!--Локальная папка для выгрузки Если выбрана FOLDER указать путь к папке -->
+      <TargetFolder folder="@ACCOUNT\Dictionaries\" />
+      <!--Код контракта вводить через (;) -->
+      <ContractCode>@CONTRACTS</ContractCode>
+      <!--Тип выгружаемых справочников (Возможны варианты:HELIX, INFOCLINICA)-->
+      <DictionariesType>HELIX</DictionariesType>
+      <!--Код региона спроков выполнения исследований СПБ=0000000001,МСК=0000000039,ЕКБ=0000000004-->
+      <SpecialPropertiesCode>@SPPROPREGION</SpecialPropertiesCode>
+      <!--Выгрузка цен по договору = true, Выгрузка цен по контракту =false-->
+      <UnloadPrice>@ISBYCONTRACT</UnloadPrice>
+      <!--выгрузка  CanEditSampledDate для справочника Rules (Возможные варианты: true, false)-->
+      <CanEditSampledDate>false</CanEditSampledDate>
+      <!--выгрузка Manipulations для справочника SamplePreparations (Возможные варианты: true, false)-->
+      <Manipulations>false</Manipulations>
+    </singleAccountSettings>
